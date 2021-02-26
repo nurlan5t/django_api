@@ -5,6 +5,12 @@ from django.db.models import SET_NULL
 
 class Course(models.Model):
     name = models.CharField(max_length=100)
+    duration = models.CharField(max_length=50, null=True)
+    price = models.IntegerField(null=True)
+    level = models.CharField(max_length=100, null=True)
+
+    def __str__(self):
+        return self.name
 
 
 class Student(models.Model):
@@ -12,5 +18,6 @@ class Student(models.Model):
     name = models.CharField(max_length=100)
     age = models.IntegerField()
 
-    def str(self):
+    def __str__(self):
         return self.name
+
