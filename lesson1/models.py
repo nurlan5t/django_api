@@ -12,7 +12,6 @@ class Course(models.Model):
     def __str__(self):
         return self.name
 
-
 class Student(models.Model):
     course = models.ForeignKey(Course, null=True, on_delete=SET_NULL)
     name = models.CharField(max_length=100)
@@ -20,4 +19,3 @@ class Student(models.Model):
 
     def __str__(self):
         return self.name
-
